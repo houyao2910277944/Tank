@@ -55,7 +55,10 @@ public class Bullet : MonoBehaviour
                 Destroy(gameObject);
                 break;
             case "Barrier":
-                collision.SendMessage("PlayerAudio");
+                if (isPlayerBullect)//玩家的子弹才有音效
+                {
+                    collision.SendMessage("PlayerAudio");
+                }
                 Destroy(gameObject);//销毁子弹
                 break;
             default:

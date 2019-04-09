@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
     private float v = -1, h;
 
     //引用
-    public SpriteRenderer sr;
+    private SpriteRenderer sr;
     public Sprite[] tankSprite;//上右下左
     public GameObject bullectPrefab;
     public GameObject explosionPrefab;
@@ -19,19 +19,11 @@ public class Enemy : MonoBehaviour
     //计时器
     private float timeVal = 3;
     private float timeValChangeDirection;
-    /// <summary>
-    /// 
-    /// </summary>
+    
     private void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {

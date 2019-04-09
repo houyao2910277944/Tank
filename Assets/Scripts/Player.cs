@@ -22,17 +22,10 @@ public class Player : MonoBehaviour
     public AudioSource moveAudio;
     //拿到音效的资源
     public AudioClip[] tankAudio;
-    /// <summary>
-    /// 
-    /// </summary>
+    
     private void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
     }
 
     // Update is called once per frame

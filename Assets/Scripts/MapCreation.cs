@@ -13,8 +13,14 @@ public class MapCreation : MonoBehaviour
     /// 已经有东西的位置列表
     /// </summary>
     private List<Vector3> itemPositionList = new List<Vector3>();
+    //单例方法 Ctrl+R+E
+    private static MapCreation instance;
+
+    public static MapCreation Instance { get => instance; set => instance = value; }
+
     private void Awake()
     {
+        Instance = this;//单例初始化为当前函数
         InitMap();
     }
     private void InitMap()
@@ -62,6 +68,10 @@ public class MapCreation : MonoBehaviour
             CreateItem(item[1], CreateRandomPosition(), Quaternion.identity);
         }
     }
+    public void DestroyItem()
+    {
+        Destroy(gameObject);
+    }
     /// <summary>
     /// 放在MapCreation游戏对象中
     /// </summary>
@@ -73,6 +83,7 @@ public class MapCreation : MonoBehaviour
         GameObject itemGo = Instantiate(createGameObject, createPosition, createRotation);
         itemGo.transform.SetParent(gameObject.transform);
         itemPositionList.Add(createPosition);
+        
     }
     /// <summary>
     /// 产生随机位置的方法

@@ -13,6 +13,10 @@ public class Heart : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //GetCompoment <T>()
+        //从当前游戏对象获取组件T，
+        //只在当前游戏对象中获取，
+        //没得到的就返回null，不会去子物体中去寻找。
         sr = GetComponent<SpriteRenderer>();
     }
    

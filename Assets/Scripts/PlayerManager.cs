@@ -20,6 +20,7 @@ public class PlayerManager : MonoBehaviour
     /// </summary>
     public bool isDead;//false
     public bool isDefeat;
+    public bool isDestroy;
 
     //引用
     public GameObject born;
@@ -27,7 +28,7 @@ public class PlayerManager : MonoBehaviour
     public Text playerLifeValueText;
     public GameObject isDefeatUI;
 
-    //单例
+    //单例 创建单例方法Ctrl+R+E
     private static PlayerManager instance;
 
     public static PlayerManager Instance { get => instance; set => instance = value; }
@@ -37,9 +38,16 @@ public class PlayerManager : MonoBehaviour
     }
     void Update()
     {
+        if (isDestroy)
+        {
+            return;
+        }
         if (isDefeat)
         {
+            isDestroy = true;
             isDefeatUI.SetActive(true);
+            //三秒后调用ReturnToTheMainMenu方法
+            Invoke("ReturnToTheMainMenu", 3);
             return;
         }
         if (isDead)
@@ -59,8 +67,6 @@ public class PlayerManager : MonoBehaviour
         if (lifeValue < 1)
         {
             isDefeat = true;
-            //三秒后调用ReturnToTheMainMenu方法
-            Invoke("ReturnToTheMainMenu", 3);
         }
         else//玩家复活
         {

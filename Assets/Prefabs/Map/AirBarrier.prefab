@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7397184059109327985}
   - component: {fileID: 3857673311115970217}
+  - component: {fileID: 1568040628305658941}
   m_Layer: 0
   m_Name: AirBarrier
   m_TagString: Barrier
@@ -57,3 +58,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.32}
   m_EdgeRadius: 0
+--- !u!114 &1568040628305658941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5362147401092248514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: d3b66d925e12487478404914fa2c899a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitAudio: {fileID: 8300000, guid: a36f2278a85dfc8458b569c2b95bacb6, type: 3}
