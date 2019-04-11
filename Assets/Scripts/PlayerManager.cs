@@ -36,6 +36,7 @@ public class PlayerManager : MonoBehaviour
     {
         Instance = this;
     }
+
     void Update()
     {
         if (isDestroy)
@@ -46,6 +47,7 @@ public class PlayerManager : MonoBehaviour
         {
             isDestroy = true;
             isDefeatUI.SetActive(true);
+            print(isDefeatUI.name + "---" + isDefeatUI.transform.position);
             //三秒后调用ReturnToTheMainMenu方法
             Invoke("ReturnToTheMainMenu", 3);
             return;
